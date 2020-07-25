@@ -1,3 +1,9 @@
+html {
+  background-color: #1D1D1D;
+  height: 200vh;
+  width: 100vw;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+svg {
+  cursor: pointer;
 }
+
+/* https://www.schemecolor.com/red-black-and-gray.php */
+
+
+
