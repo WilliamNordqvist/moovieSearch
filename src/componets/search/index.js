@@ -6,7 +6,7 @@ const SearchBar = () => {
   const { searchKeyWord, setsearchKeyWord } = useContext(UserContext);
   return (
     <Styled.SearchBar>
-      <input placeholder="Search Moovie" value={searchKeyWord} onChange={(e) => setsearchKeyWord(e.target.value)}/>
+      <input placeholder="Search Movie" value={searchKeyWord} onChange={(e) => setsearchKeyWord(e.target.value)}/>
     </Styled.SearchBar>
   );
 };
