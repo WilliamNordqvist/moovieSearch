@@ -3,7 +3,6 @@ import * as Styled from "./style";
 import Icon from "../icon";
 
 const Overlay = ({setSelectedMovie, SelectedMovie}) => {
-  console.log(SelectedMovie)
   const { title, overview, poster_path, release_date, vote_average } = SelectedMovie
   const movieImgurl = poster_path ? `https://image.tmdb.org/t/p/w342/${poster_path}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/500px-No_image_available.svg.png'
   return (

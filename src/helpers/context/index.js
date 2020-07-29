@@ -5,7 +5,7 @@ const UserContext = React.createContext();
 export const UserProvider = ({ children }) => {
   const [searchKeyWord, setsearchKeyWord] = useState();
   const [page, setPage] = useState();
-  const [device, setDevice] = useState();
+  const [isMobile, setMobile] = useState();
   return (
     <UserContext.Provider
       value={{
@@ -13,8 +13,8 @@ export const UserProvider = ({ children }) => {
         setsearchKeyWord,
         page,
         setPage,
-        device,
-        setDevice
+        isMobile,
+        setMobile,
       }}
     >
       {children}

@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import * as Styled from "./style";
 import Icon from '../../icon'
+import UserContext from "../../../helpers/context/index";
 
 const MovieCard = ({ movie, addToFavoriteList, FavoriteList,ToWatchList, addToWatchList, setSelectedMovie }) => {
+  const { isMobile } = useContext(UserContext);
   const [ FavoritIconColor, setFavoritIconColor ] = useState('#ececec');
   const [ PlusIconColor, setPlusIconColor ] = useState('#ececec');
   const { title, poster_path, vote_average } = movie;
@@ -42,16 +44,19 @@ useEffect(()=> {
 }, [isAlreadyInFavorit, isAlreadyInToWatch])
 
   return (
-    <Styled.MovieCardContainer onClick={() => { setSelectedMovie(movie)}}>
-      <Styled.MovieOverlay>
+    <Styled.MovieCardContainer>
+      <Styled.MovieOverlay >
+        <div className="MovieTitle" onClick={() => { setSelectedMovie(movie)}}>
         <h2>{title}</h2>
-        <p>{`${vote_average}/10`}</p>
-        <Styled.MovieIcons>
-          <Icon onClick={isAlreadyInFavorit ? () => RemoveMovieFromFavorite() : () => AddMovieToFavorite()} name='filled-star' color={FavoritIconColor} size="20px"/>
-          <Icon onClick={isAlreadyInFavorit ? () => RemoveMovieFromFToWatch() : () => AddMovieToWatchList()} name='plus' color={PlusIconColor} size="20px"/>
-        </Styled.MovieIcons>
+          <p>{`${vote_average}/10`}</p>
+        </div>
+        
+        <div className="MovieIcons">
+          <Icon onClick={isAlreadyInFavorit ? () => RemoveMovieFromFavorite() : () => AddMovieToFavorite()} name='filled-star' color={FavoritIconColor} size={isMobile ? '25px' : '20px'}/>
+          <Icon onClick={isAlreadyInToWatch ? () => RemoveMovieFromFToWatch() : () => AddMovieToWatchList()} name='plus' color={PlusIconColor} size={isMobile ? '25px' : '20px'}/>
+        </div>
       </Styled.MovieOverlay>
-      <Styled.MovieCard
+      <Styled.MovieCard 
         poster_path={poster_path}
         image={`https://image.tmdb.org/t/p/w185/${poster_path}`}
       ></Styled.MovieCard>

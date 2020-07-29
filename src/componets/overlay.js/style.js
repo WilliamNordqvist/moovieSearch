@@ -13,11 +13,16 @@ display: flex;
 justify-content: center;
 align-items: center;
 visibility:${props => props.SelectedMovie ? 'viseble' : 'hidden'};
+
+@media only screen and (max-width: 600px) {
+  z-index: 102;  
+}
 `;
 
 export const OverlayWindow = styled.div`
 position: relative;
 width: 80%;
+max-width: 1300px;
 height: 90%;
 background: rgba(236, 236, 236, 0.99);
 border-radius: 5px;
@@ -26,6 +31,12 @@ overflow: scroll;
   position: absolute; 
   top: 10px; 
   right: 10px;
+}
+@media only screen and (max-width: 600px) {
+  width:100%;
+  height:100%;
+  border-radius:0;
+  
 }
 
 
@@ -41,7 +52,8 @@ margin-top: 7%;
 padding: 0 5%;
 font-family: 'Nunito',sans-serif;
 img {
-  width: 40%
+  width: 40%;
+  max-width:350px;
 }
 
 .movie-title{
