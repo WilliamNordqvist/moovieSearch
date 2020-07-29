@@ -24,4 +24,10 @@ export const SearchBar = styled.div`
   border-bottom: solid thin #bbb8b5;
   font-family: 'Nunito', sans-serif;
   }
+
+  @media only screen and (max-width: 600px) {
+    input {
+      text-align:center;
+    }
+  }
   `;

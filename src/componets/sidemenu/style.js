@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const SideMenu = styled.div `
   height:calc(100% - 5px);
   transition: 0.4s;
-  width:${props => props.open ? "100px" : "0"};
+  width:${props => props.open ? "55px" : "0"};
   position:fixed;
-  top:5px;
+  top:0px;
   left:0; 
-  background:#ECECEC;
+  background:#BFBFBF;
   height:100vh;
+  z-index:101;
 `;
 
 export const IconsContainer = styled.div `
