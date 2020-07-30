@@ -6,6 +6,5 @@ it("should render title", () => {
   const wrapper = shallow(<MainTitle />);
   const element = wrapper.find('#title')  
   expect(element.text()).toBe('Movie Search App');
-
 });
 
