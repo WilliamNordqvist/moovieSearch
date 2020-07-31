@@ -7,5 +7,5 @@ const themoviedbApiFetch = async (searchKeyWord) => {
   return res.data;
 }
 
-export default themoviedbApiFetch
 
+export default themoviedbApiFetch

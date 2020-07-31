@@ -26,9 +26,15 @@ const Movies = () => {
 
   useEffect(() => {
     if (searchKeyWord) {
-      themoviedbApiFetch(searchKeyWord).then((result) => {
-        setDefaultMovies(result);
-      });
+      themoviedbApiFetch(searchKeyWord)
+        .then((result) => {
+          setDefaultMovies(result);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          console.log(error.request);
+          console.log(error.config);
+        });
     }
   }, [searchKeyWord, FavoriteList]);
 
